@@ -478,9 +478,9 @@
 
   // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
   // Creality Ender-3
-  #define DEFAULT_Kp 21.73
-  #define DEFAULT_Ki 1.54
-  #define DEFAULT_Kd 76.55
+  #define DEFAULT_Kp 26.39
+  #define DEFAULT_Ki 2.32
+  #define DEFAULT_Kd 75.02
 
 
   // Ultimaker
@@ -517,7 +517,7 @@
  * heater. If your configuration is significantly different than this and you don't understand
  * the issues involved, don't use bed PID until someone else verifies that your hardware works.
  */
-//#define PIDTEMPBED
+#define PIDTEMPBED
 
 //#define BED_LIMIT_SWITCHING
 
@@ -727,7 +727,7 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 40, 40, 400, 48 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 160, 162, 1600, 192 }
 
 /**
  * Default Max Feed Rate (mm/s)
