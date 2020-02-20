@@ -436,13 +436,13 @@
 
 // Below this temperature the heater will be switched off
 // because it probably indicates a broken thermistor wire.
-#define HEATER_0_MINTEMP   5
-#define HEATER_1_MINTEMP   5
-#define HEATER_2_MINTEMP   5
-#define HEATER_3_MINTEMP   5
-#define HEATER_4_MINTEMP   5
-#define HEATER_5_MINTEMP   5
-#define BED_MINTEMP        5
+#define HEATER_0_MINTEMP   15
+#define HEATER_1_MINTEMP   15
+#define HEATER_2_MINTEMP   15
+#define HEATER_3_MINTEMP   15
+#define HEATER_4_MINTEMP   15
+#define HEATER_5_MINTEMP   15
+#define BED_MINTEMP        15
 
 // Above this temperature the heater will be switched off.
 // This can protect components from overheating, but NOT from shorts and failures.
@@ -478,9 +478,9 @@
 
   // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
   // Creality Ender-3
-  #define DEFAULT_Kp 26.39
-  #define DEFAULT_Ki 2.32
-  #define DEFAULT_Kd 75.02
+  #define DEFAULT_Kp 21.50
+  #define DEFAULT_Ki 1.62
+  #define DEFAULT_Kd 71.48
 
 
   // Ultimaker
@@ -535,9 +535,9 @@
 
   //120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   //from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
-  #define DEFAULT_bedKp 142.57
-  #define DEFAULT_bedKi 24.77
-  #define DEFAULT_bedKd 547.09
+  #define DEFAULT_bedKp 181.19
+  #define DEFAULT_bedKi 35.22
+  #define DEFAULT_bedKd 621.47
 
   //120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   //from pidautotune
@@ -727,7 +727,7 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 160, 162, 1600, 192 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 160, 162, 1600, 282 }
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -873,6 +873,7 @@
 /**
  * The BLTouch probe uses a Hall effect sensor and emulates a servo.
  */
+ // RESTORE
 //#define BLTOUCH
 
 /**
@@ -930,7 +931,7 @@
  *
  * Specify a Probe position as { X, Y, Z }
  */
-#define NOZZLE_TO_PROBE_OFFSET { 10, 10, 0 }
+#define NOZZLE_TO_PROBE_OFFSET { 46, 4, -1.24 }
 
 // Certain types of probes need to stay away from edges
 #define MIN_PROBE_EDGE 10
@@ -953,7 +954,7 @@
  * A total of 2 does fast/slow probes with a weighted average.
  * A total of 3 or more adds more slow probes, taking the average.
  */
-//#define MULTIPLE_PROBING 2
+//#define MULTIPLE_PROBING 3
 //#define EXTRA_PROBING    1
 
 /**
@@ -1062,7 +1063,7 @@
 
 // The size of the print bed
 #define X_BED_SIZE 220
-#define Y_BED_SIZE 220
+#define Y_BED_SIZE 210
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
 #define X_MIN_POS 0
@@ -1113,8 +1114,8 @@
 #if ENABLED(FILAMENT_RUNOUT_SENSOR)
   #define NUM_RUNOUT_SENSORS   1     // Number of sensors, up to one per extruder. Define a FIL_RUNOUT#_PIN for each.
   #define FIL_RUNOUT_INVERTING false // Set to true to invert the logic of the sensor.
-  #define FIL_RUNOUT_PULLUP          // Use internal pullup for filament runout pins.
-  //#define FIL_RUNOUT_PULLDOWN      // Use internal pulldown for filament runout pins.
+  //#define FIL_RUNOUT_PULLUP          // Use internal pullup for filament runout pins.
+  #define FIL_RUNOUT_PULLDOWN      // Use internal pulldown for filament runout pins.
 
   // Set one or more commands to execute on filament runout.
   // (After 'M412 H' Marlin will ask the host to handle the process.)
@@ -1173,6 +1174,7 @@
  */
 //#define AUTO_BED_LEVELING_3POINT
 //#define AUTO_BED_LEVELING_LINEAR
+// RESTORE
 //#define AUTO_BED_LEVELING_BILINEAR
 //#define AUTO_BED_LEVELING_UBL
 //#define MESH_BED_LEVELING
@@ -1181,6 +1183,7 @@
  * Normally G28 leaves leveling disabled on completion. Enable
  * this option to have G28 restore the prior leveling state.
  */
+// RESTORE
 //#define RESTORE_LEVELING_AFTER_G28
 
 /**
@@ -1205,7 +1208,7 @@
   /**
    * Enable the G26 Mesh Validation Pattern tool.
    */
-  //#define G26_MESH_VALIDATION
+  #define G26_MESH_VALIDATION
   #if ENABLED(G26_MESH_VALIDATION)
     #define MESH_TEST_NOZZLE_SIZE    0.4  // (mm) Diameter of primary nozzle.
     #define MESH_TEST_LAYER_HEIGHT   0.2  // (mm) Default layer height for the G26 Mesh Validation Tool.
@@ -1219,7 +1222,7 @@
 #if EITHER(AUTO_BED_LEVELING_LINEAR, AUTO_BED_LEVELING_BILINEAR)
 
   // Set the number of grid points per dimension.
-  #define GRID_MAX_POINTS_X 3
+  #define GRID_MAX_POINTS_X 10
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
   // Probe along the Y axis, advancing X after each column
@@ -1279,6 +1282,7 @@
  * Add a bed leveling sub-menu for ABL or MBL.
  * Include a guided procedure if manual probing is enabled.
  */
+ // RESTORE
 //#define LCD_BED_LEVELING
 
 #if ENABLED(LCD_BED_LEVELING)
@@ -1288,7 +1292,7 @@
 #endif
 
 // Add a menu item to move between bed corners for manual bed adjustment
-//#define LEVEL_BED_CORNERS
+#define LEVEL_BED_CORNERS
 
 #if ENABLED(LEVEL_BED_CORNERS)
   #define LEVEL_CORNERS_INSET 30    // (mm) An inset for corner leveling
@@ -1324,6 +1328,7 @@
 // - Move the Z probe (or nozzle) to a defined XY point before Z Homing when homing all axes (G28).
 // - Prevent Z homing when the Z probe is outside bed area.
 //
+// RESTORE
 //#define Z_SAFE_HOMING
 
 #if ENABLED(Z_SAFE_HOMING)
@@ -1466,7 +1471,7 @@
  *    P1  Raise the nozzle always to Z-park height.
  *    P2  Raise the nozzle by Z-park amount, limited to Z_MAX_POS.
  */
-//#define NOZZLE_PARK_FEATURE
+#define NOZZLE_PARK_FEATURE
 
 #if ENABLED(NOZZLE_PARK_FEATURE)
   // Specify a park position as { X, Y, Z_raise }
