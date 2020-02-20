@@ -416,16 +416,10 @@
 #define TEMP_SENSOR_3 0
 #define TEMP_SENSOR_4 0
 #define TEMP_SENSOR_5 0
-<<<<<<< HEAD
-#define TEMP_SENSOR_BED 1
-||||||| merged common ancestors
-#define TEMP_SENSOR_BED 0
-=======
 #define TEMP_SENSOR_6 0
 #define TEMP_SENSOR_7 0
-#define TEMP_SENSOR_BED 0
+#define TEMP_SENSOR_BED 1
 #define TEMP_SENSOR_PROBE 0
->>>>>>> origin/2.0.x
 #define TEMP_SENSOR_CHAMBER 0
 
 // Dummy thermistor constant temperature readings, for use with 998 and 999
@@ -447,33 +441,16 @@
 
 // Below this temperature the heater will be switched off
 // because it probably indicates a broken thermistor wire.
-<<<<<<< HEAD
+
 #define HEATER_0_MINTEMP   15
 #define HEATER_1_MINTEMP   15
 #define HEATER_2_MINTEMP   15
 #define HEATER_3_MINTEMP   15
 #define HEATER_4_MINTEMP   15
 #define HEATER_5_MINTEMP   15
+#define HEATER_6_MINTEMP   15
+#define HEATER_7_MINTEMP   15
 #define BED_MINTEMP        15
-||||||| merged common ancestors
-#define HEATER_0_MINTEMP   5
-#define HEATER_1_MINTEMP   5
-#define HEATER_2_MINTEMP   5
-#define HEATER_3_MINTEMP   5
-#define HEATER_4_MINTEMP   5
-#define HEATER_5_MINTEMP   5
-#define BED_MINTEMP        5
-=======
-#define HEATER_0_MINTEMP   5
-#define HEATER_1_MINTEMP   5
-#define HEATER_2_MINTEMP   5
-#define HEATER_3_MINTEMP   5
-#define HEATER_4_MINTEMP   5
-#define HEATER_5_MINTEMP   5
-#define HEATER_6_MINTEMP   5
-#define HEATER_7_MINTEMP   5
-#define BED_MINTEMP        5
->>>>>>> origin/2.0.x
 
 // Above this temperature the heater will be switched off.
 // This can protect components from overheating, but NOT from shorts and failures.
@@ -484,15 +461,9 @@
 #define HEATER_3_MAXTEMP 275
 #define HEATER_4_MAXTEMP 275
 #define HEATER_5_MAXTEMP 275
-<<<<<<< HEAD
-#define BED_MAXTEMP      125
-||||||| merged common ancestors
-#define BED_MAXTEMP      150
-=======
 #define HEATER_6_MAXTEMP 275
 #define HEATER_7_MAXTEMP 275
-#define BED_MAXTEMP      150
->>>>>>> origin/2.0.x
+#define BED_MAXTEMP      125
 
 //===========================================================================
 //============================= PID Settings ================================
@@ -717,14 +688,7 @@
 //#define Y2_DRIVER_TYPE A4988
 //#define Z2_DRIVER_TYPE A4988
 //#define Z3_DRIVER_TYPE A4988
-<<<<<<< HEAD
-#define E0_DRIVER_TYPE TMC2209_STANDALONE
-||||||| merged common ancestors
-//#define E0_DRIVER_TYPE A4988
-=======
-//#define Z4_DRIVER_TYPE A4988
-//#define E0_DRIVER_TYPE A4988
->>>>>>> origin/2.0.x
+//#define E0_DRIVER_TYPE TMC2209_STANDALONE
 //#define E1_DRIVER_TYPE A4988
 //#define E2_DRIVER_TYPE A4988
 //#define E3_DRIVER_TYPE A4988
@@ -776,7 +740,7 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 160, 162, 1600, 282 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 159, 162, 1600, 282 }
 
 /**
  * Default Max Feed Rate (mm/s)
