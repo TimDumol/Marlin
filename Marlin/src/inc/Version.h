@@ -25,7 +25,13 @@
  * Release version. Leave the Marlin version or apply a custom scheme.
  */
 #ifndef SHORT_BUILD_VERSION
+<<<<<<< HEAD
   #define SHORT_BUILD_VERSION "2.0.x"
+||||||| merged common ancestors
+  #define SHORT_BUILD_VERSION "bugfix-2.0.x"
+=======
+  #define SHORT_BUILD_VERSION "2.0.3"
+>>>>>>> origin/2.0.x
 #endif
 
 /**
@@ -42,7 +48,13 @@
  * version was tagged.
  */
 #ifndef STRING_DISTRIBUTION_DATE
+<<<<<<< HEAD
   #define STRING_DISTRIBUTION_DATE "2019-12-01"
+||||||| merged common ancestors
+  #define STRING_DISTRIBUTION_DATE "2019-12-02"
+=======
+  #define STRING_DISTRIBUTION_DATE "2020-01-31"
+>>>>>>> origin/2.0.x
 #endif
 
 /**
