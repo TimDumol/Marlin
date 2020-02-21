@@ -240,14 +240,14 @@
    */
   #define PID_FAN_SCALING
   #if ENABLED(PID_FAN_SCALING)
-    //#define PID_FAN_SCALING_ALTERNATIVE_DEFINITION
+    #define PID_FAN_SCALING_ALTERNATIVE_DEFINITION
     #if ENABLED(PID_FAN_SCALING_ALTERNATIVE_DEFINITION)
       // The alternative definition is used for an easier configuration.
       // Just figure out Kf at fullspeed (255) and PID_FAN_SCALING_MIN_SPEED.
       // DEFAULT_Kf and PID_FAN_SCALING_LIN_FACTOR are calculated accordingly.
 
-      #define PID_FAN_SCALING_AT_FULL_SPEED 41.19        //=PID_FAN_SCALING_LIN_FACTOR*255+DEFAULT_Kf
-      #define PID_FAN_SCALING_AT_MIN_SPEED 6.0          //=PID_FAN_SCALING_LIN_FACTOR*PID_FAN_SCALING_MIN_SPEED+DEFAULT_Kf
+      #define PID_FAN_SCALING_AT_FULL_SPEED 13        //=PID_FAN_SCALING_LIN_FACTOR*255+DEFAULT_Kf
+      #define PID_FAN_SCALING_AT_MIN_SPEED 3          //=PID_FAN_SCALING_LIN_FACTOR*PID_FAN_SCALING_MIN_SPEED+DEFAULT_Kf
       #define PID_FAN_SCALING_MIN_SPEED 32.0            // Minimum fan speed at which to enable PID_FAN_SCALING
 
       #define DEFAULT_Kf (255.0*PID_FAN_SCALING_AT_MIN_SPEED-PID_FAN_SCALING_AT_FULL_SPEED*PID_FAN_SCALING_MIN_SPEED)/(255.0-PID_FAN_SCALING_MIN_SPEED)
@@ -367,8 +367,8 @@
  *
  * Define one or both of these to override the default 0-255 range.
  */
-//#define FAN_MIN_PWM 50
-//#define FAN_MAX_PWM 128
+#define FAN_MIN_PWM 32
+#define FAN_MAX_PWM 255
 
 /**
  * FAST PWM FAN Settings
