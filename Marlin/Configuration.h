@@ -469,8 +469,8 @@
 // Above this temperature the heater will be switched off.
 // This can protect components from overheating, but NOT from shorts and failures.
 // (Use MINTEMP for thermistor short/failure protection.)
-#define HEATER_0_MAXTEMP 275
-#define HEATER_1_MAXTEMP 275
+#define HEATER_0_MAXTEMP 300
+#define HEATER_1_MAXTEMP 300
 #define HEATER_2_MAXTEMP 275
 #define HEATER_3_MAXTEMP 275
 #define HEATER_4_MAXTEMP 275
@@ -510,10 +510,9 @@
     #define DEFAULT_Ki_LIST {   1.08,   1.08 }
     #define DEFAULT_Kd_LIST { 114.00, 114.00 }
   #else
-    #define DEFAULT_Kp 43.69
-    #define DEFAULT_Ki 6.51
-    #define DEFAULT_Kd 73.30
-    
+    #define DEFAULT_Kp 23.67
+    #define DEFAULT_Ki 2.02
+    #define DEFAULT_Kd 69.50
   #endif
 #endif // PIDTEMP
 
@@ -753,7 +752,7 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 1280, 1280, 400, 576 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 1280, 1280, 400, 1600 }
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -836,7 +835,7 @@
  *
  * See https://github.com/synthetos/TinyG/wiki/Jerk-Controlled-Motion-Explained
  */
-//#define S_CURVE_ACCELERATION
+#define S_CURVE_ACCELERATION
 
 //===========================================================================
 //============================= Z Probe Options =============================
